@@ -1,0 +1,21 @@
+{
+  "name": "WARLONG",
+  "short_name": "WARLONG",
+  "description": "A modern web app for WARLONG.",
+  "icons": [
+    {
+      "src": "img/logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}
