@@ -149,7 +149,8 @@ body {
 
 /* about section */
 .about,
-.hos {
+.hos,
+.galerih {
   padding: 8rem 7% 1.4rem;
 }
 
@@ -161,7 +162,8 @@ body {
 }
 
 .about h2 span,
-.hos h2 span {
+.hos h2 span,
+.galerih h2 span {
   color: var(--primary);
 }
 
@@ -230,6 +232,89 @@ body {
 
 .hos .row .hos-card .hos-card-title {
   margin: 1rem auto 0.5rem;
+}
+
+/* Gallery Section */
+.galerih {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.galerih h2 {
+  margin-bottom: 1rem;
+}
+
+.galerih p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lightbox.show {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* footer */
