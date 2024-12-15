@@ -15,26 +15,37 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// Lightbox functionality
-const galleryItems = document.querySelectorAll(".gallery-item img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".lightbox .close");
+const carouselTrack = document.querySelector(".carousel-track");
+const carouselItems = document.querySelectorAll(".carousel-item");
+const prevButton = document.querySelector(".carousel-btn.prev");
+const nextButton = document.querySelector(".carousel-btn.next");
 
-galleryItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    lightbox.classList.add("show");
-    lightboxImg.src = item.src;
-    lightboxImg.alt = item.alt;
-  });
+let currentIndex = 0;
+
+// Function to update the carousel's position
+function updateCarousel() {
+  const itemWidth = carouselItems[0].clientWidth;
+  carouselTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+}
+
+// Next button event
+nextButton.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % carouselItems.length;
+  updateCarousel();
 });
 
-closeBtn.addEventListener("click", () => {
-  lightbox.classList.remove("show");
+// Previous button event
+prevButton.addEventListener("click", () => {
+  currentIndex =
+    (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+  updateCarousel();
 });
 
-lightbox.addEventListener("click", (e) => {
-  if (e.target !== lightboxImg) {
-    lightbox.classList.remove("show");
-  }
-});
+// Update the carousel on window resize to maintain responsiveness
+window.addEventListener("resize", updateCarousel);
+
+// Optional: Autoplay
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % carouselItems.length;
+  updateCarousel();
+}, 5000); // Change slides every 5 seconds
