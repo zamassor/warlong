@@ -43,9 +43,3 @@ prevButton.addEventListener("click", () => {
 
 // Update the carousel on window resize to maintain responsiveness
 window.addEventListener("resize", updateCarousel);
-
-// Optional: Autoplay
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % carouselItems.length;
-  updateCarousel();
-}, 5000); // Change slides every 5 seconds
