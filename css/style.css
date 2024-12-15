@@ -179,6 +179,7 @@ body {
 .about .row .about-img img {
   height: 83%;
   width: 100%;
+  border-radius: 5%;
 }
 
 .about .row .content {
@@ -246,6 +247,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: #fff;
+  margin-top: 3rem;
 }
 
 .image-carousel h2 span {
@@ -304,7 +306,7 @@ body {
 }
 
 .carousel-btn:hover {
-  background-color: #f76c6c;
+  background-color: var(--primary);
 }
 
 /* Responsive Design */
